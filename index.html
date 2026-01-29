@@ -1,0 +1,161 @@
+<!-- Simple homepage template for PriviMetrics installation by WebOrbiton -->
+
+<!-- 
+    About PriviMetrics:
+        PriviMetrics is a self-hosted, privacy-first web analytics tool. 
+        It works without databases, is lightweight, easy to install on shared hosting, 
+
+    Template Page provided by WebOrbiton.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PriviMetrics-based analytics</title>
+    <link rel="shortcut icon" href="favicon.ico?v=1-0-0" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        header {
+            padding: 20px 40px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        header .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 700;
+            color: white;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        main h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        main p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        main hr {
+            border: 0;
+            height: 1px;
+            width: 80px;
+            background: var(--accent);
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .footer {
+            background: var(--bg-tertiary);
+            border-top: 1px solid var(--border-color);
+            padding: 24px 20px;
+            color: var(--text-secondary);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--accent-hover);
+        }
+
+        @media (max-width: 768px) {
+            main h1 {
+                font-size: 2.2rem;
+            }
+
+            main p {
+                font-size: 1rem;
+            }
+
+            header {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><img src="logo.svg" alt="Logo"></div>
+            <div>PriviMetrics</div>
+        </div>
+    </header>
+
+    <main>
+        <h1>PriviMetrics-based analytics</h1>
+        <p>
+            This website uses PriviMetrics, a privacy-focused analytics system.
+        </p>
+        <hr>
+    </main>
+
+    <script>
+        const html = document.documentElement;
+
+        function applySystemTheme() {
+            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            html.dataset.theme = isDark ? 'dark' : 'light';
+        }
+
+        applySystemTheme();
+
+        window.matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', applySystemTheme);
+    </script>
+
+</body>
+
+</html>
